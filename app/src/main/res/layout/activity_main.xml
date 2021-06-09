@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The <layout> tag must be the root tag when you are using DataBinding. Doing so you are telling
+the compiler that you are using DataBinding and your layout will have special tags like <variable>
+or <import>, so you have to embed your layout within that tag.
+In short, you need to use the <layout> tag whenever you are using DataBinding for the compiler to
+understand the special tags and generate the DataBinding class with the right variables and methods. -->
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".view.MainActivity">
+
+        <!-- elevation="0dp" removes the shadow line between the AppBarLayout and the TabLayout,
+        Elevation is the relative distance between two surfaces along the z-axis, changing it
+        changes the shadow below the view -->
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            app:elevation="0dp"
+            android:elevation="0dp">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:titleTextColor="@android:color/white"
+                app:title="PepperChat"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!-- app:tabIndicatorHeight="?actionBarSize" causes the indicator at the bottom to be as
+         tall as the action bar, ?actionBarSize = the height of the action bar -->
+        <!-- ? is a special character that means it's an Android internal feature -->
+        <!-- tabGravity specifies how are the tabs inside the layout placed, at the beginning (LHS),
+        center or expand to the whole width -->
+        <!-- tabIndicator is a replacement for tabIndicatorHeight, see
+        https://itnext.io/android-tablayout-and-tabitem-268ac06ba966#a378 -->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_below="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:tabBackground="@color/colorPrimary"
+            app:tabGravity="fill"
+            app:tabIndicatorHeight="3dp"
+            app:tabIndicatorColor="@android:color/white"
+            app:tabSelectedTextColor="@android:color/white"
+            app:tabTextColor="@android:color/white">
+
+<!--            <com.google.android.material.tabs.TabItem-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="A"/>-->
+<!--            <com.google.android.material.tabs.TabItem-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="A"/>-->
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <!-- ViewPager is a layout manager that allows the user to flip left and right through pages of data. You
+        supply an implementation of a PagerAdapter to generate the pages that the view shows.
+        ViewPager is most often used in conjunction with android.app.Fragment, which is a convenient
+        way to supply and manage the lifecycle of each page. -->
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_below="@id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <ImageButton
+            android:id="@+id/btn_add_status"
+            android:visibility="gone"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/circle_bg_white"
+            app:tint="@color/colorPrimaryDark"
+            android:elevation="2dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="80dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/ic_round_edit_24" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_action"
+            android:src="@android:drawable/stat_notify_chat"
+            app:tint="@android:color/white"
+            android:backgroundTint="@color/colorPrimary"
+            app:borderWidth="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="15dp"/>
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,2 @@
+rootProject.name = "PepperChat"
+include ':app'

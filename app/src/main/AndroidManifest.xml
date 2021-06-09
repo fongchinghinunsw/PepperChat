@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.stephenfong.pepperchat">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- To do any type of search of the Contacts Provider, your app must have READ_CONTACTS permission. -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PepperChat">
+        <activity android:name=".view.activities.status.DisplayStatusActivity"></activity>
+        <activity android:name=".view.activities.status.AddStatusPicActivity" />
+        <activity android:name=".view.activities.display.ReviewSendImageActivity" />
+        <activity android:name=".view.activities.profile.UserProfileActivity" />
+        <activity android:name=".view.activities.chats.ChatsActivity" />
+        <activity android:name=".view.activities.contact.ContactsActivity" />
+        <activity android:name=".view.activities.display.ViewImageActivity" />
+        <activity android:name=".view.activities.profile.ProfileActivity" />
+        <activity android:name=".view.activities.settings.SettingsActivity" />
+        <activity android:name=".view.activities.auth.SetUserInfoActivity" />
+        <activity android:name=".view.activities.auth.PhoneLoginActivity" />
+        <activity android:name=".view.activities.startup.WelcomeScreenActivity" />
+        <activity android:name=".view.activities.startup.SplashScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.MainActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>

@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Changing MaterialComponents causes the button to lose background color automatically,
+     if you insist on changing the parent to AppCompat, set also the backgroundTint property
+     for the buttons -->
+    <style name="Theme.PepperChat" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:textColorSecondary">@android:color/white</item>
+    </style>
+</resources>

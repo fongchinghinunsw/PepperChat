@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "761254379920",
+    "project_id": "pepperchat-22e19",
+    "storage_bucket": "pepperchat-22e19.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:761254379920:android:3a4b74286a1bc3296c7315",
+        "android_client_info": {
+          "package_name": "com.stephenfong.pepperchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "761254379920-0lfekf0o0mg2o2cs9iot86e92gplg705.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.stephenfong.pepperchat",
+            "certificate_hash": "c2a57d04081c7c8e1b185a7dbe10617a87e674bc"
+          }
+        },
+        {
+          "client_id": "761254379920-u9ptkbtfmjtl5q83even6kd820at23fl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBw6jO652jRzpH27TSbuumPRq41YYUQi_A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "761254379920-u9ptkbtfmjtl5q83even6kd820at23fl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
